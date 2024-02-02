@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    background-color: greenyellow;
+    flex-grow: 1;
+}

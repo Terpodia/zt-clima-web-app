@@ -13,9 +13,13 @@ body {
 a {
   text-decoration: none;
   color: black;
-  &:hover{
+  &:hover {
     color: #1877f2;
   }
+}
+
+img {
+  display: block;
 }
 
 p {

@@ -10,9 +10,10 @@ $breakpoints: (
 @mixin make-grid-columns() {
   @for $i from 1 through $grid-columns {
     .col-#{$i} {
+      display: flex;
+      flex-direction: column;
       width: calc(100% / $grid-columns * $i);
       float: left;
-      box-sizing: border-box;
     }
   }
 

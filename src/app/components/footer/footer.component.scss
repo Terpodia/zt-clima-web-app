@@ -10,3 +10,19 @@
 p {
   font-size: 14px;
 }
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+hr {
+  margin: 1rem 0;
+}

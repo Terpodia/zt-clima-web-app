@@ -1,15 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
-*,::after,::before{
-    box-sizing: border-box;
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    height: 100vh;
+  margin: 0;
+  height: 100vh;
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
-@import 'grid-settings';
+a {
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color: #1877f2;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+@import "grid-settings";
 
 // Container
 .container {

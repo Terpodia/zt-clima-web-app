@@ -3,26 +3,29 @@
   padding: 1rem;
 }
 
-.contact {
-  color: white;
-}
-
 p {
   font-size: 14px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  .info {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-
 hr {
   margin: 1rem 0;
+}
+
+.contact {
+  color: white;
+
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }

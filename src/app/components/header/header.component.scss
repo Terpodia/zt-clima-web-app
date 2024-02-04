@@ -1,3 +1,23 @@
 :host {
-    background-color: white;
+  background-color: white;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .items {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    .items {
+      display: flex;
+      gap: 20px;
+    }
+  }
 }

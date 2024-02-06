@@ -1,7 +1,9 @@
+@import "../../../buttons.scss";
+
 :host {
   background-color: gray;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 1320/680;
   position: relative;
 }
 
@@ -12,16 +14,13 @@ img {
 }
 
 .arrow-control {
+  @include btn-transparent();
+
   position: absolute;
   top: 50%;
   font-size: 32px;
   transform: translateY(-50%);
   color: white;
-
-  background: none;
-  padding: none;
-  border: none;
-  user-select: none;
 
   &:hover {
     color: #f3f3f3;

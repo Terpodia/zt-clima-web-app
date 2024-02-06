@@ -18,9 +18,12 @@ export class GalleryComponent {
   currentIndex: number = 0;
 
   galleryImages: string[] = [
-    'https://cdn0.recetasgratis.net/es/posts/4/8/8/torta_humeda_de_chocolate_decorada_47884_orig.jpg',
-    'https://chocolateras.com/wp-content/uploads/2020/10/INGREDIENTES-DEL-CHOCOLATE.jpg',
-    'https://laopinionaustral.com.ar/media/uploads/2023/10/receta-de-brownie-casero.jpg',
+    '../../../assets/images/1.jpg',
+    '../../../assets/images/2.jpg',
+    '../../../assets/images/3.jpg',
+    '../../../assets/images/4.jpg',
+    '../../../assets/images/5.jpg',
+    '../../../assets/images/6.jpg',
   ];
 
   prev(): void {

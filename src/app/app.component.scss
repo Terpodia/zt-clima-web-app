@@ -8,3 +8,9 @@
   background-color: #f1f1f1;
   flex-grow: 1;
 }
+
+.floating {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}

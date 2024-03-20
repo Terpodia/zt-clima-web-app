@@ -17,5 +17,5 @@ const msg = 'Hola ZT Clima, necesito asesoramiento.';
 })
 export class AppComponent {
   title = 'zt-clima-web-app';
-  whatsaaUrl = WHATSAPP_API + `&phone=${phone}&text=${msg}`;
+  whatsappUrl = WHATSAPP_API + `&phone=${phone}&text=${msg}`;
 }

@@ -4,11 +4,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
-  template: `<p id="nosotros">about works!</p>`,
+  imports: [CommonModule],
+  templateUrl: './about.component.html',
   styleUrl: './about.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutComponent { }
+export class AboutComponent {}

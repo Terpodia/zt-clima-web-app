@@ -1,15 +1,10 @@
 @import "../../../buttons.scss";
 
-.title {
-  text-align: center;
-  font-size: 42px;
-}
-
 .services {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 2rem;
-  gap: 1rem;
+  gap: 3rem;
   flex-wrap: wrap;
 
   .card {
@@ -29,9 +24,6 @@
     border-radius: 8px;
     overflow: hidden;
 
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 20px;
     margin-bottom: 1rem;
     padding: 1rem;
 
@@ -42,8 +34,25 @@
       object-fit: cover;
     }
 
-    span {
+    .title {
       z-index: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 5rem;
+    }
+
+    .description {
+      z-index: 1;
+      font-size: 14px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s;
     }
   }
 }

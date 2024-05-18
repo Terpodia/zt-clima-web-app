@@ -1,60 +1,16 @@
-<h2 id="productos" class="title">Productos</h2>
+<h2 id="productos" class="title text-center">Productos</h2>
 
 <div class="products">
-  <div class="card">
-    <img
-      src="assets/images/products/AristonLogo.png"
-      alt=""
-      height="100%"
-      width="100%"
-    />
-  </div>
+  <div class="flip-card" *ngFor="let img of images">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="img.src" alt="" height="100%" width="100%" />
+      </div>
 
-  <div class="card">
-    <img
-      src="assets/images/products/Baxi Logo.png"
-      alt=""
-      height="100%"
-      width="100%"
-    />
-  </div>
-
-  <div class="card">
-    <img
-      src="assets/images/products/Ferroli Logo.png"
-      alt=""
-      height="100%"
-      width="100%"
-    />
-  </div>
-
-  <div class="card">
-    <img
-      src="assets/images/products/Giacomini Logo.png"
-      alt=""
-      height="100%"
-      width="100%"
-    />
-  </div>
-
-
-  <div class="card">
-    <img
-      src="assets/images/products/Peisa Logo.png"
-      alt=""
-      height="100%"
-      width="100%"
-    />
-  </div>
-
-
-  <div class="card">
-    <img
-      src="assets/images/products/Rehau Logo.png"
-      alt=""
-      height="100%"
-      width="100%"
-    />
+      <div class="flip-card-back">
+        <h1>{{ img.title }}</h1>
+        <p>{{ img.description }}</p>
+      </div>
+    </div>
   </div>
 </div>
-

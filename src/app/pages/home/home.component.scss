@@ -7,10 +7,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 3rem;
+  }
 }
 
 .container {
   margin-bottom: 3rem;
   padding: 1rem;
+  gap: 2rem;
 }

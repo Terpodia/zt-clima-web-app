@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy-github": "ng build --base-href /zt-clima-web-app/ && rm -rf docs && mv ./dist/zt-clima-web-app/browser ./docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:zt-clima-web-app": "node dist/zt-clima-web-app/server/server.mjs"

@@ -1,12 +1,15 @@
 <h1>ZT Clima</h1>
 
 <div id="inicio" class="gallery">
-  <app-gallery />
+  <app-gallery [galleryImages]="mainGallery" />
 </div>
 
 <div class="container">
   <app-about />
   <app-services />
+  <div id="obras-realizadas" class="gallery">
+    <app-gallery [galleryImages]="obrasRealizadasGallery" />
+  </div>
   <!-- <app-clients /> -->
   <app-products />
   <!-- <app-contact /> -->

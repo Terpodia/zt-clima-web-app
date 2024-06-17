@@ -5,6 +5,7 @@ import { AboutComponent } from '../../components/about/about.component';
 import { ClientsComponent } from '../../components/clients/clients.component';
 import { ProductsComponent } from '../../components/products/products.component';
 import { ContactComponent } from '../../components/contact/contact.component';
+import { TrabajosRealizadosComponent } from '../../components/trabajos-realizados/trabajos-realizados.component';
 
 @Component({
   selector: 'app-home',
@@ -16,12 +17,12 @@ import { ContactComponent } from '../../components/contact/contact.component';
     ClientsComponent,
     ProductsComponent,
     ContactComponent,
+    TrabajosRealizadosComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-
   mainGallery = [
     'assets/images/1.jpg',
     'assets/images/2.jpg',
@@ -29,14 +30,5 @@ export class HomeComponent {
     'assets/images/4.jpg',
     'assets/images/5.jpg',
     'assets/images/6.jpg',
-  ];
-
-  obrasRealizadasGallery = [
-    'assets/images/obras/1.jpg',
-    'assets/images/obras/2.jpg',
-    'assets/images/obras/3.jpg',
-    'assets/images/obras/4.jpg',
-    'assets/images/obras/5.jpg',
-    'assets/images/obras/6.jpg',
   ];
 }

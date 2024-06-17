@@ -1,7 +1,5 @@
-h1 {
-  position: absolute;
-  z-index: -1;
-  color: transparent;
+:host {
+  display: block;
 }
 
 .gallery {
@@ -12,10 +10,4 @@ h1 {
   @media (min-width: 768px) {
     margin-bottom: 3rem;
   }
-}
-
-.container {
-  margin-bottom: 3rem;
-  padding: 1rem;
-  gap: 2rem;
 }

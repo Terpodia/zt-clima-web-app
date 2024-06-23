@@ -12,11 +12,12 @@ import { GalleryComponent } from '../gallery/gallery.component';
 })
 export class TrabajosRealizadosComponent {
   obrasRealizadasGallery = [
-    'assets/images/obras/1.jpg',
-    'assets/images/obras/2.jpg',
-    'assets/images/obras/3.jpg',
-    'assets/images/obras/4.jpg',
-    'assets/images/obras/5.jpg',
-    'assets/images/obras/6.jpg',
+    'assets/images/obras/obras1.jpg',
+    'assets/images/obras/obras2.jpg',
+    'assets/images/obras/obras3.jpg',
+    'assets/images/obras/obras4.jpg',
+    'assets/images/obras/obras5.jpg',
+    'assets/images/obras/obras6.jpg',
+    'assets/images/obras/obras7.jpg',
   ];
 }

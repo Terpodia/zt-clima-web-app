@@ -6,6 +6,7 @@ import { ClientsComponent } from '../../components/clients/clients.component';
 import { ProductsComponent } from '../../components/products/products.component';
 import { ContactComponent } from '../../components/contact/contact.component';
 import { TrabajosRealizadosComponent } from '../../components/trabajos-realizados/trabajos-realizados.component';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ import { TrabajosRealizadosComponent } from '../../components/trabajos-realizado
     ProductsComponent,
     ContactComponent,
     TrabajosRealizadosComponent,
+    ContactFormComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

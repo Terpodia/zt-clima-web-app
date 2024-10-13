@@ -5,7 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 const WHATSAPP_API =
   'https://api.whatsapp.com/send/?type=phone_number&app_absent=0';
-const phone = '5491161818130';
+const phone = '541131601069';
 const msg = 'Hola ZT Clima, necesito asesoramiento.';
 
 @Component({

@@ -7,3 +7,7 @@
 <button class="arrow-control right" (click)="next()">
   <fa-icon [icon]="faChevronRight"></fa-icon>
 </button>
+
+<div style="display: none">
+  <img *ngFor="let image of galleryImages" [src]="image" alt="preload" />
+</div>

@@ -21,7 +21,7 @@
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input id="email" formControlName="email" placeholder="tu@email.com" />
+      <input id="email" formControlName="email" placeholder="ejemplo@email.com" />
       <div *ngIf="email?.invalid && email?.touched" class="error-message">
         <small *ngIf="email?.errors?.['required']"
           >El email es obligatorio.</small

@@ -1,9 +1,16 @@
 <h2 id="marcas" class="title text-center">Marcas</h2>
 
 <div class="products">
-  <div class="card" *ngFor="let img of images">
-    <img [src]="img.src" alt="" height="100%" width="100%" />
-    <p>{{ img.title }}</p>
-    <p>{{ img.description }}</p>
+  <div class="flip-card" *ngFor="let img of images">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="img.src" alt="" height="100%" width="100%" />
+      </div>
+
+      <div class="flip-card-back">
+        <h1>{{ img.title }}</h1>
+        <p>{{ img.description }}</p>
+      </div>
+    </div>
   </div>
 </div>

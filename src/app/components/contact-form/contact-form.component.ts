@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
@@ -22,7 +23,8 @@ export class ContactFormComponent {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly router: Router
   ) {
     this.contactForm = this.fb.group({
       name: [
@@ -75,7 +77,7 @@ export class ContactFormComponent {
           console.log('SUCCESS!', response.status, response.text);
           this.contactForm.reset(); // Resetea el formulario después de enviar
           this.isLoading = false;
-          this.isDialogOpen = true;
+          this.router.navigate(['/mensaje-enviado']);
           this.cdr.detectChanges();
         },
         (err) => {

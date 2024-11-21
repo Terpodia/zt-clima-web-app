@@ -20,9 +20,7 @@ export class AppComponent {
   title = 'zt-clima-web-app';
   whatsappUrl = WHATSAPP_API + `&phone=${phone}&text=${msg}`;
 
-  constructor(
-    private readonly gtmService: GoogleTagManagerService
-  ) {}
+  constructor(private readonly gtmService: GoogleTagManagerService) { }
 
   sendGTMEvent() {
     const gtmTag = {

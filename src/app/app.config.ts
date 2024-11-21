@@ -8,6 +8,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
-    { provide: 'googleTagManagerId', useValue: 'GTM-KVP4PQHH' }
+    { provide:'googleTagManagerId', useValue: 'GTM-KVP4PQHH' }
   ]
 };

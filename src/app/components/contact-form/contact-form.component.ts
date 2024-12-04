@@ -83,7 +83,7 @@ export class ContactFormComponent {
         (err) => {
           this.isLoading = false;
           console.error('FAILED...', err);
-          alert('Ocurrió un error al enviar el mensaje.');
+          // alert('Ocurrió un error al enviar el mensaje.');
         }
       );
     } else {

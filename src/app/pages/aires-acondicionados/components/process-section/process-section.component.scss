@@ -1,0 +1,122 @@
+// Process Section Styles
+.process-section {
+  // py-12 md:py-16 bg-gray-50
+  padding: 3rem 0;
+  background-color: #f9fafb;
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
+}
+
+.container {
+  // max-w-6xl mx-auto px-4 sm:px-6 lg:px-8
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+.section-title {
+  // text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin-bottom: 3rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.process-grid {
+  // grid grid-cols-1 md:grid-cols-3 gap-8 mb-8
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.process-step {
+  // text-center
+  text-align: center;
+}
+
+.step-number {
+  // w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4
+  width: 4rem;
+  height: 4rem;
+  background-color: #dbeafe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+
+  span {
+    // text-2xl font-bold text-blue-600
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+  }
+}
+
+.step-title {
+  // text-xl font-bold text-gray-900 mb-2
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  // text-gray-600
+  color: #4b5563;
+  margin: 0;
+}
+
+.process-cta {
+  // text-center
+  text-align: center;
+}
+
+.maintenance-note {
+  // text-lg text-gray-600 mb-6
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  // bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+  background-color: #2563eb;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #1d4ed8;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px rgba(59, 130, 246, 0.2);
+  }
+}

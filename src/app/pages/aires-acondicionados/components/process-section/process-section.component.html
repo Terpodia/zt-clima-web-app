@@ -1,0 +1,24 @@
+<section id="proceso" class="process-section">
+  <div class="container">
+    <h2 class="section-title">Nuestro proceso, sin vueltas</h2>
+
+    <div class="process-grid">
+      <div *ngFor="let step of processSteps" class="process-step">
+        <div class="step-number">
+          <span>{{ step.number }}</span>
+        </div>
+        <h3 class="step-title">{{ step.title }}</h3>
+        <p class="step-description">{{ step.description }}</p>
+      </div>
+    </div>
+
+    <div class="process-cta">
+      <p class="maintenance-note">
+        También ofrecemos <strong>mantenimiento programado</strong>.
+      </p>
+      <button (click)="smoothScroll('form')" class="cta-button" type="button">
+        Empezar mi proyecto
+      </button>
+    </div>
+  </div>
+</section>

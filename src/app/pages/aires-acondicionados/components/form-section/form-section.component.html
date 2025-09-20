@@ -1,0 +1,290 @@
+<section id="form" class="form-section">
+  <div class="container">
+    <h2 class="section-title">Pedí una evaluación técnica</h2>
+
+    <div *ngIf="showSuccess" class="success-message">
+      <svg
+        class="success-icon"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <h3 class="success-title">¡Solicitud enviada!</h3>
+      <p class="success-description">
+        Te contactaremos en las próximas 24-48 horas para coordinar la visita
+        técnica.
+      </p>
+    </div>
+
+    <div *ngIf="!showSuccess" class="form-container">
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="steps-wrapper">
+          <div *ngFor="let step of [1, 2, 3]; let i = index" class="step-item">
+            <div class="step-circle" [class.active]="currentStep >= step">
+              {{ step }}
+            </div>
+            <div
+              *ngIf="step < 3"
+              class="step-line"
+              [class.active]="currentStep > step"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1: Personal Data -->
+      <div *ngIf="currentStep === 1" class="step-content">
+        <h3 class="step-title">Datos de contacto</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Nombre *</label>
+            <input
+              type="text"
+              [value]="formData.nombre"
+              (input)="handleInputChange('nombre', $any($event.target).value)"
+              class="form-input"
+              [class.error]="formErrors['nombre']"
+              placeholder="Tu nombre completo"
+            />
+            <div *ngIf="formErrors['nombre']" class="error-message">
+              {{ formErrors["nombre"] }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Teléfono *</label>
+            <input
+              type="tel"
+              [value]="formData.telefono"
+              (input)="handleInputChange('telefono', $any($event.target).value)"
+              class="form-input"
+              [class.error]="formErrors['telefono']"
+              placeholder="11 1234-5678"
+            />
+            <div *ngIf="formErrors['telefono']" class="error-message">
+              {{ formErrors["telefono"] }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input
+              type="email"
+              [value]="formData.email"
+              (input)="handleInputChange('email', $any($event.target).value)"
+              class="form-input"
+              [class.error]="formErrors['email']"
+              placeholder="tu@email.com"
+            />
+            <div *ngIf="formErrors['email']" class="error-message">
+              {{ formErrors["email"] }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Localidad *</label>
+            <select
+              [value]="formData.localidad"
+              (change)="
+                handleInputChange('localidad', $any($event.target).value)
+              "
+              class="form-select"
+              [class.error]="formErrors['localidad']"
+            >
+              <option value="">Seleccionar localidad</option>
+              <optgroup label="Capital Federal">
+                <option value="Belgrano">Belgrano</option>
+                <option value="Núñez">Núñez</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Recoleta">Recoleta</option>
+                <option value="Colegiales">Colegiales</option>
+                <option value="Caballito">Caballito</option>
+                <option value="Villa Urquiza">Villa Urquiza</option>
+                <option value="Chacarita">Chacarita</option>
+                <option value="Saavedra">Saavedra</option>
+                <option value="Villa Crespo">Villa Crespo</option>
+                <option value="Almagro">Almagro</option>
+                <option value="Otra CABA">Otra CABA</option>
+              </optgroup>
+              <optgroup label="Zona Norte">
+                <option value="Vicente López">Vicente López</option>
+                <option value="Olivos">Olivos</option>
+                <option value="La Lucila">La Lucila</option>
+                <option value="Martínez">Martínez</option>
+                <option value="San Isidro">San Isidro</option>
+                <option value="Acassuso">Acassuso</option>
+                <option value="Béccar">Béccar</option>
+                <option value="San Fernando">San Fernando</option>
+                <option value="Tigre">Tigre</option>
+                <option value="San Martín">San Martín</option>
+                <option value="Pilar">Pilar</option>
+                <option value="Otra Zona Norte">Otra Zona Norte</option>
+              </optgroup>
+            </select>
+            <div *ngIf="formErrors['localidad']" class="error-message">
+              {{ formErrors["localidad"] }}
+            </div>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button (click)="nextStep()" class="btn-next">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Project Details -->
+      <div *ngIf="currentStep === 2" class="step-content">
+        <h3 class="step-title">Detalles del proyecto</h3>
+        <div class="form-content">
+          <div class="form-group">
+            <label class="form-label">Tipo de proyecto *</label>
+            <div class="radio-grid">
+              <label
+                *ngFor="
+                  let tipo of ['Vivienda', 'Oficina', 'Local comercial', 'Otro']
+                "
+                class="radio-label"
+              >
+                <input
+                  type="radio"
+                  name="tipoProyecto"
+                  [value]="tipo"
+                  [checked]="formData.tipoProyecto === tipo"
+                  (change)="handleInputChange('tipoProyecto', tipo)"
+                  class="radio-input"
+                />
+                <span class="radio-text">{{ tipo }}</span>
+              </label>
+            </div>
+            <div *ngIf="formErrors['tipoProyecto']" class="error-message">
+              {{ formErrors["tipoProyecto"] }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Superficie aproximada *</label>
+            <input
+              type="text"
+              [value]="formData.superficie"
+              (input)="
+                handleInputChange('superficie', $any($event.target).value)
+              "
+              class="form-input"
+              [class.error]="formErrors['superficie']"
+              placeholder="Ej: 120 m², 3 ambientes, etc."
+            />
+            <div *ngIf="formErrors['superficie']" class="error-message">
+              {{ formErrors["superficie"] }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tipo de obra *</label>
+            <div class="radio-grid">
+              <label
+                *ngFor="
+                  let tipo of [
+                    'Obra nueva',
+                    'Reforma/ampliación',
+                    'Reemplazo de sistema existente',
+                    'Otro'
+                  ]
+                "
+                class="radio-label"
+              >
+                <input
+                  type="radio"
+                  name="tipoObra"
+                  [value]="tipo"
+                  [checked]="formData.tipoObra === tipo"
+                  (change)="handleInputChange('tipoObra', tipo)"
+                  class="radio-input"
+                />
+                <span class="radio-text">{{ tipo }}</span>
+              </label>
+            </div>
+            <div *ngIf="formErrors['tipoObra']" class="error-message">
+              {{ formErrors["tipoObra"] }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Sistema de interés</label>
+            <select
+              [value]="formData.sistemaInteres"
+              (change)="
+                handleInputChange('sistemaInteres', $any($event.target).value)
+              "
+              class="form-select"
+            >
+              <option value="">Seleccionar sistema (opcional)</option>
+              <option value="VRF/VRV">VRF/VRV</option>
+              <option value="Aire central por conductos">
+                Aire central por conductos
+              </option>
+              <option value="Bajo silueta (slim duct)">
+                Bajo silueta (slim duct)
+              </option>
+              <option value="No estoy seguro">No estoy seguro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button (click)="prevStep()" class="btn-prev">← Anterior</button>
+          <button (click)="nextStep()" class="btn-next">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Additional Info -->
+      <div *ngIf="currentStep === 3" class="step-content">
+        <h3 class="step-title">Información adicional</h3>
+        <div class="form-content">
+          <div class="form-group">
+            <label class="form-label">Mensaje adicional (opcional)</label>
+            <textarea
+              [value]="formData.mensaje"
+              (input)="handleInputChange('mensaje', $any($event.target).value)"
+              rows="4"
+              class="form-textarea"
+              placeholder="Contanos más detalles sobre tu proyecto, plazos, presupuesto, etc."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Archivos adjuntos (opcional)</label>
+            <input
+              type="file"
+              multiple
+              accept=".pdf,.jpg,.jpeg,.png,.dwg"
+              (change)="onFileChange($event)"
+              class="form-file"
+            />
+            <p class="file-help">
+              Planos, fotos, referencias (PDF, JPG, PNG, DWG - máx. 10MB)
+            </p>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button (click)="prevStep()" class="btn-prev">← Anterior</button>
+          <button
+            (click)="handleSubmit()"
+            [disabled]="isSubmitting"
+            class="btn-submit"
+          >
+            {{ isSubmitting ? "Enviando..." : "Enviar solicitud" }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<main>
+  <app-hero-section [smoothScroll]="smoothScroll.bind(this)"></app-hero-section>
+  <app-brand-section></app-brand-section>
+  <app-cluster-section
+    [smoothScroll]="smoothScroll.bind(this)"
+  ></app-cluster-section>
+  <app-vrf-section
+    [smoothScroll]="smoothScroll.bind(this)"
+    [openFaq]="openFaq"
+    [toggleFaq]="toggleFaq.bind(this)"
+  ></app-vrf-section>
+  <app-central-section
+    [smoothScroll]="smoothScroll.bind(this)"
+    [openFaq]="openFaq"
+    [toggleFaq]="toggleFaq.bind(this)"
+  ></app-central-section>
+  <app-bajo-silueta-section
+    [smoothScroll]="smoothScroll.bind(this)"
+    [openFaq]="openFaq"
+    [toggleFaq]="toggleFaq.bind(this)"
+  ></app-bajo-silueta-section>
+  <app-quick-guide-section
+    [smoothScroll]="smoothScroll.bind(this)"
+  ></app-quick-guide-section>
+  <app-process-section
+    [smoothScroll]="smoothScroll.bind(this)"
+  ></app-process-section>
+  <app-guarantees-section></app-guarantees-section>
+  <app-coverage-section
+    [smoothScroll]="smoothScroll.bind(this)"
+  ></app-coverage-section>
+  <app-form-section></app-form-section>
+</main>

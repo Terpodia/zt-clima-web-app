@@ -11,6 +11,26 @@ import { Component } from '@angular/core';
 export class ProductsComponent {
   images = [
     {
+      src: 'assets/images/products/Samsung Logo.jpg',
+      title: 'Samsung',
+      description: 'Ariston, es una marca italiana con más de 90 años de experiencia en el mercado global, ofrece productos innovadores y eficientes para calefacción y agua caliente, destacando por su calidad duradera, sostenibilidad y facilidad de uso.',
+    },
+    {
+      src: 'assets/images/products/LG Logo.jpg',
+      title: 'LG',
+      description: 'Ariston, es una marca italiana con más de 90 años de experiencia en el mercado global, ofrece productos innovadores y eficientes para calefacción y agua caliente, destacando por su calidad duradera, sostenibilidad y facilidad de uso.',
+    },
+    {
+      src: 'assets/images/products/Daikin Logo.jpg',
+      title: 'Daikin',
+      description: 'Ariston, es una marca italiana con más de 90 años de experiencia en el mercado global, ofrece productos innovadores y eficientes para calefacción y agua caliente, destacando por su calidad duradera, sostenibilidad y facilidad de uso.',
+    },
+    {
+      src: 'assets/images/products/York Logo.jpg',
+      title: 'York',
+      description: 'Ariston, es una marca italiana con más de 90 años de experiencia en el mercado global, ofrece productos innovadores y eficientes para calefacción y agua caliente, destacando por su calidad duradera, sostenibilidad y facilidad de uso.',
+    },
+    {
       src: 'assets/images/products/AristonLogo.png',
       title: 'Ariston',
       description: 'Ariston, es una marca italiana con más de 90 años de experiencia en el mercado global, ofrece productos innovadores y eficientes para calefacción y agua caliente, destacando por su calidad duradera, sostenibilidad y facilidad de uso.',

@@ -1,26 +1,46 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { WhatsappDialogComponent } from './components/whatsapp-dialog/whatsapp-dialog.component';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
-
-const WHATSAPP_API =
-  'https://api.whatsapp.com/send/?type=phone_number&app_absent=0';
-const phone = '541131601069';
-const msg = 'Hola ZT Clima, necesito asesoramiento.';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    WhatsappDialogComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'zt-clima-web-app';
-  whatsappUrl = WHATSAPP_API + `&phone=${phone}&text=${msg}`;
+  showWhatsappDialog = false;
 
-  constructor(private readonly gtmService: GoogleTagManagerService) { }
+  constructor(private readonly gtmService: GoogleTagManagerService) {}
+
+  openWhatsappDialog() {
+    this.showWhatsappDialog = true;
+    this.sendGTMEvent();
+  }
+
+  closeWhatsappDialog() {
+    this.showWhatsappDialog = false;
+  }
+
+  onWhatsappOptionSelected(option: string) {
+    const gtmTag = {
+      event: 'WhatsAppOptionSelected',
+      option: option,
+    };
+    this.gtmService.pushTag(gtmTag);
+  }
 
   sendGTMEvent() {
     const gtmTag = {

@@ -1,7 +1,11 @@
 <h1>ZT Clima</h1>
 
 <div id="inicio" class="gallery">
-  <app-gallery [galleryImages]="mainGallery" />
+  <app-gallery
+    [galleryImages]="mainGallery"
+    [autoplay]="true"
+    [autoplayDelay]="10000"
+  />
 </div>
 
 <div class="container">

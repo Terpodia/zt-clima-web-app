@@ -8,12 +8,10 @@
   <app-footer></app-footer>
 </div>
 
-<a
-  [href]="whatsappUrl"
+<button
   class="floating"
-  target="_blank"
-  rel="noopener noreferrer"
-  (click)="sendGTMEvent()"
+  (click)="openWhatsappDialog()"
+  aria-label="Contactar por WhatsApp"
 >
   <img
     src="assets/images/whatsapp.png"
@@ -21,4 +19,10 @@
     width="80px"
     height="80px"
   />
-</a>
+</button>
+
+<app-whatsapp-dialog
+  *ngIf="showWhatsappDialog"
+  (close)="closeWhatsappDialog()"
+  (optionSelected)="onWhatsappOptionSelected($event)"
+></app-whatsapp-dialog>

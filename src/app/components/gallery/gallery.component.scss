@@ -3,7 +3,7 @@
 :host {
   background-color: gray;
   width: 100%;
-  aspect-ratio: 1320/680;
+  height: 100%;
   position: relative;
 }
 
@@ -34,7 +34,6 @@ img {
     right: 1rem;
   }
 }
-
 
 @media (min-width: 768px) {
   .arrow-control {

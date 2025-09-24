@@ -1,10 +1,10 @@
 <img alt="cover" [src]="galleryImages[currentIndex]" />
 
-<button class="arrow-control left" (click)="prev()">
+<button class="arrow-control left" (click)="prev(); onManualNavigation()">
   <fa-icon [icon]="faChevronLeft"></fa-icon>
 </button>
 
-<button class="arrow-control right" (click)="next()">
+<button class="arrow-control right" (click)="next(); onManualNavigation()">
   <fa-icon [icon]="faChevronRight"></fa-icon>
 </button>
 

@@ -1,5 +1,12 @@
 import { NgFor, isPlatformBrowser } from '@angular/common';
-import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faChevronCircleLeft,
@@ -36,7 +43,10 @@ export class GalleryComponent implements OnInit, OnDestroy {
   }
 
   private startAutoplay(): void {
-    if (isPlatformBrowser(this.platformId)) {
+    // Always stop any existing interval first
+    this.stopAutoplay();
+
+    if (isPlatformBrowser(this.platformId) && this.autoplay) {
       this.autoplayInterval = window.setInterval(() => {
         this.next();
       }, this.autoplayDelay);
@@ -61,16 +71,11 @@ export class GalleryComponent implements OnInit, OnDestroy {
     this.currentIndex = (this.currentIndex + 1) % this.galleryImages.length;
   }
 
-  // Pause autoplay on manual navigation
+  // Reset autoplay timing on manual navigation
   onManualNavigation(): void {
     if (this.autoplay && isPlatformBrowser(this.platformId)) {
-      this.stopAutoplay();
-      // Restart autoplay after a brief pause
-      setTimeout(() => {
-        if (this.autoplay) {
-          this.startAutoplay();
-        }
-      }, 1000);
+      // Simply restart the autoplay with fresh timing
+      this.startAutoplay();
     }
   }
 }

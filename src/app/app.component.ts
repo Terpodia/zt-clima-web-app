@@ -26,8 +26,21 @@ export class AppComponent {
   constructor(private readonly gtmService: GoogleTagManagerService) {}
 
   openWhatsappDialog() {
-    this.showWhatsappDialog = true;
+    // Temporal: abrir directamente WhatsApp de calefacción
+    const WHATSAPP_API = 'https://api.whatsapp.com/send/?type=phone_number&app_absent=0';
+    const phone = '541131601069'; // Calefacción
+    const message = 'Hola ZT Clima, necesito asesoramiento.';
+    const whatsappUrl = `${WHATSAPP_API}&phone=${phone}&text=${message}`;
+    
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    
+    // Enviar eventos GTM
     this.sendGTMEvent();
+    this.onWhatsappOptionSelected('Calefacción');
+    
+    // Código original comentado temporalmente:
+    // this.showWhatsappDialog = true;
+    // this.sendGTMEvent();
   }
 
   closeWhatsappDialog() {

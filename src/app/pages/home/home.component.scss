@@ -1,17 +1,26 @@
 // Hero full-viewport con la foto de disipadores y el logo centrado.
 // El header sticky flota encima, así que compensamos su alto con margin negativo.
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin-top: -90px;
-  background-image: url("/assets/images/nuevo/hero-home.jpg");
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+
+// <img> real en vez de background-image para acelerar el LCP
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-brand {
+  position: relative;
   padding: 1rem;
 
   img {
@@ -98,14 +107,33 @@
 
 // Banda con foto del living y texto blanco
 .about-band {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: min(80vh, 720px);
   padding: var(--section-pad-y) clamp(1rem, 4vw, 2.5rem);
-  background-image: linear-gradient(rgba(30, 24, 18, 0.35), rgba(30, 24, 18, 0.35)),
-    url("/assets/images/nuevo/home-living.jpg");
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+
+  // Oscurece la foto para que el texto blanco tenga contraste
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 24, 18, 0.35);
+  }
+}
+
+// <img> lazy en vez de background-image: no entra en la carga inicial
+.band-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-band .about-inner {
+  z-index: 1;
 }
 
 .about-inner {

@@ -8,12 +8,15 @@
   overflow: hidden;
 }
 
-// La imagen entra con fade (igual que el appear del sitio Framer)
+// La imagen entra con fade (igual que el appear del sitio Framer).
+// Es un <img> real (no background) para que el preload scanner la descubra
+// temprano y mejore el LCP.
 .bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   animation: hero-bg-in 1.3s ease-out 0.15s both;
 }
 

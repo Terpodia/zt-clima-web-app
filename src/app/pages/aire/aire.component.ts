@@ -56,7 +56,7 @@ export class AireComponent {
       title: 'Aire Acondicionado | ZT Clima',
       description:
         'Sistemas de aire acondicionado de alta performance: VRF/VRV, cassette, multisplit, piso techo, bajo silueta y roof-top. Diseño e instalación en Buenos Aires.',
-      path: '/aire',
+      path: '/aire/',
     });
   }
 }

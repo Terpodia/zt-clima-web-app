@@ -57,7 +57,7 @@ export class NosotrosComponent {
       title: 'Nosotros | ZT Clima',
       description:
         'Conocé a ZT Clima: un equipo especializado en climatización con amplia trayectoria en proyectos residenciales, comerciales e industriales en Buenos Aires.',
-      path: '/nosotros',
+      path: '/nosotros/',
     });
   }
 }

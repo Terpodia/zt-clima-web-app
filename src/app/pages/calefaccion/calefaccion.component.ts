@@ -68,7 +68,7 @@ export class CalefaccionComponent {
       title: 'Calefacción | ZT Clima',
       description:
         'Calefacción y agua caliente sanitaria: calderas convencionales y de condensación, radiadores de aluminio y piso radiante Giacomini. Instalación en Buenos Aires.',
-      path: '/calefaccion',
+      path: '/calefaccion/',
     });
   }
 }

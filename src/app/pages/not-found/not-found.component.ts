@@ -14,7 +14,7 @@ export class NotFoundComponent {
     seo.set({
       title: 'Página no encontrada | ZT Clima',
       description: 'La página que buscás no existe.',
-      path: '/404',
+      path: '/404/',
       noindex: true,
     });
   }

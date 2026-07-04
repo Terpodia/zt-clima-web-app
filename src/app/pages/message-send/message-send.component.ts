@@ -16,7 +16,7 @@ export class MessageSendComponent {
     seo.set({
       title: 'Mensaje enviado | ZT Clima',
       description: 'Tu mensaje fue enviado. En breve nos contactaremos.',
-      path: '/mensaje-enviado',
+      path: '/mensaje-enviado/',
       noindex: true,
     });
   }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { SeoService } from '../../shared/seo';
 import { PageHeroComponent } from '../../components/page-hero/page-hero.component';
 import { BrandsMarqueeComponent } from '../../components/brands-marquee/brands-marquee.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
@@ -52,11 +52,12 @@ export class NosotrosComponent {
     'Surgió un inconveniente una vez que ya nos habíamos mudado y nos brindaron una respuesta inmediata. ¡Excelente post-venta!',
   ];
 
-  constructor(meta: Meta) {
-    meta.updateTag({
-      name: 'description',
-      content:
+  constructor(seo: SeoService) {
+    seo.set({
+      title: 'Nosotros | ZT Clima',
+      description:
         'Conocé a ZT Clima: un equipo especializado en climatización con amplia trayectoria en proyectos residenciales, comerciales e industriales en Buenos Aires.',
+      path: '/nosotros',
     });
   }
 }

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /mensaje-enviado
+Disallow: /404
+
+Sitemap: https://www.ztclima.com.ar/sitemap.xml

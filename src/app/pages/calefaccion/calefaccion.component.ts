@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { SeoService } from '../../shared/seo';
 import { PageHeroComponent } from '../../components/page-hero/page-hero.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
 import { RevealDirective } from '../../shared/reveal.directive';
@@ -63,11 +63,12 @@ export class CalefaccionComponent {
     },
   ];
 
-  constructor(meta: Meta) {
-    meta.updateTag({
-      name: 'description',
-      content:
+  constructor(seo: SeoService) {
+    seo.set({
+      title: 'Calefacción | ZT Clima',
+      description:
         'Calefacción y agua caliente sanitaria: calderas convencionales y de condensación, radiadores de aluminio y piso radiante Giacomini. Instalación en Buenos Aires.',
+      path: '/calefaccion',
     });
   }
 }

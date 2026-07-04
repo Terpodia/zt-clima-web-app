@@ -4,6 +4,7 @@ import { AireComponent } from './pages/aire/aire.component';
 import { CalefaccionComponent } from './pages/calefaccion/calefaccion.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { MessageSendComponent } from './pages/message-send/message-send.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -31,5 +32,10 @@ export const routes: Routes = [
     component: MessageSendComponent,
     title: 'Mensaje enviado | ZT Clima',
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: '404',
+    component: NotFoundComponent,
+    title: 'Página no encontrada | ZT Clima',
+  },
+  { path: '**', redirectTo: '404' },
 ];

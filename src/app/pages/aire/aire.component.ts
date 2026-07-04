@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { SeoService } from '../../shared/seo';
 import { PageHeroComponent } from '../../components/page-hero/page-hero.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
 import { RevealDirective } from '../../shared/reveal.directive';
@@ -51,11 +51,12 @@ export class AireComponent {
     },
   ];
 
-  constructor(meta: Meta) {
-    meta.updateTag({
-      name: 'description',
-      content:
+  constructor(seo: SeoService) {
+    seo.set({
+      title: 'Aire Acondicionado | ZT Clima',
+      description:
         'Sistemas de aire acondicionado de alta performance: VRF/VRV, cassette, multisplit, piso techo, bajo silueta y roof-top. Diseño e instalación en Buenos Aires.',
+      path: '/aire',
     });
   }
 }

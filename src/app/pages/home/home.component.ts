@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../../shared/seo';
 import { BrandsMarqueeComponent } from '../../components/brands-marquee/brands-marquee.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
 import { RevealDirective } from '../../shared/reveal.directive';
@@ -22,6 +23,15 @@ interface ProcessStep {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  constructor(seo: SeoService) {
+    seo.set({
+      title: 'ZT Clima | Calefacción y Aire Acondicionado',
+      description:
+        'ZT Clima: soluciones integrales en calefacción, aire acondicionado y agua caliente sanitaria para uso residencial, comercial e industrial en Buenos Aires.',
+      path: '/',
+    });
+  }
+
   readonly steps: ProcessStep[] = [
     {
       title: 'Escuchamos tu necesidad',

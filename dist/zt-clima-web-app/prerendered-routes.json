@@ -1,6 +1,7 @@
 {
   "routes": [
     "/",
+    "/404",
     "/aire",
     "/calefaccion",
     "/mensaje-enviado",

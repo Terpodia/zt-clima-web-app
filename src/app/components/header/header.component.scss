@@ -1,24 +1,100 @@
-:host {
-  background-color: white;
-  padding: 1rem;
-  box-shadow: 0px 3px 6px 0px rgba(34, 34, 34, 0.16);
+.header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem clamp(0.5rem, 2vw, 1.5rem) 0;
 }
 
-.header {
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0.75rem clamp(1rem, 3vw, 2rem);
+  background-color: var(--c-surface);
+  border-radius: var(--radius-nav);
+  box-shadow: var(--shadow-card);
+}
 
-  .items {
-    display: none;
+.items {
+  display: none;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+
+  a {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    color: var(--c-text);
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      color: #000;
+    }
+
+    &.active {
+      border-bottom-color: var(--c-text);
+    }
   }
 }
 
-@media (min-width: 768px) {
-  .header {
-    .items {
-      display: flex;
-      gap: 20px;
-    }
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--c-text);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+}
+
+.navbar--open {
+  .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 0.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+
+  .items,
+  .navbar--open .items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-top: 0;
   }
 }

@@ -1,31 +1,18 @@
 <app-header></app-header>
 
-<div class="scroll">
-  <main class="content">
-    <router-outlet></router-outlet>
-  </main>
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
 
-  <app-footer></app-footer>
-</div>
+<app-footer></app-footer>
 
-<button
+<a
   class="floating"
-  (click)="openWhatsappDialog()"
+  [href]="whatsappUrl"
+  target="_blank"
+  rel="noopener noreferrer"
+  (click)="onWhatsappClick()"
   aria-label="Contactar por WhatsApp"
 >
-  <img
-    src="assets/images/whatsapp.png"
-    alt="whatsapp"
-    width="80px"
-    height="80px"
-  />
-</button>
-
-<!-- Temporalmente deshabilitado: se abre directamente WhatsApp de calefacción -->
-<!--
-<app-whatsapp-dialog
-  *ngIf="showWhatsappDialog"
-  (close)="closeWhatsappDialog()"
-  (optionSelected)="onWhatsappOptionSelected($event)"
-></app-whatsapp-dialog>
--->
+  <img src="assets/icons/whatsapp.svg" alt="" width="34" height="34" />
+</a>

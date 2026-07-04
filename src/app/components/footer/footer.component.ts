@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import {
-  faEnvelope,
-  faPhone,
-  faMapMarkerAlt,
-} from '@fortawesome/free-solid-svg-icons';
+import { RouterLink } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+import { SITE } from '../../shared/site-data';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [RouterLink],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  faWhatsapp = faWhatsapp;
-  faEnvelope = faEnvelope;
-  faPhone = faPhone;
-  faMapMarkerAlt = faMapMarkerAlt;
+  readonly site = SITE;
+  readonly year = new Date().getFullYear();
+
+  constructor(private readonly scroller: ViewportScroller) {}
+
+  scrollToContact() {
+    this.scroller.scrollToAnchor('contactanos');
+  }
 }

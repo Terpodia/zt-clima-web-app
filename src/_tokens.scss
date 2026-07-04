@@ -1,0 +1,30 @@
+// Design tokens del rediseño (paleta y tipografías del sitio Framer)
+:root {
+  // Colores
+  --c-bg-cream: #f7f2ef;
+  --c-bg-page: #fafafa;
+  --c-surface: #f5f5f4;
+  --c-brown: #6c4d38;
+  --c-sage: #5e6b64;
+  --c-sage-light: #aeb6bf;
+  --c-green-dark: #13261b;
+  --c-text: #4c4c4c;
+  --c-text-muted: #999999;
+  --c-white: #ffffff;
+  --c-whatsapp: #25d366;
+
+  // Tipografía
+  --font-heading: "Sora", sans-serif;
+  --font-body: "Teachers", sans-serif;
+  --font-ui: "Ubuntu Sans", sans-serif;
+
+  // Forma
+  --radius-pill: 999px;
+  --radius-card: 16px;
+  --radius-nav: 24px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+  // Layout
+  --content-max: 1200px;
+  --section-pad-y: clamp(3rem, 8vw, 6rem);
+}

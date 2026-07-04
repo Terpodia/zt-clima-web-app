@@ -1,0 +1,34 @@
+<app-page-hero
+  image="assets/images/nuevo/aire/hero-aire.jpg"
+  title="Aire acondicionado"
+  subtitle="La tecnología de cada solución"
+></app-page-hero>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="heading">Aire acondicionado</h2>
+    <p class="intro">
+      Adaptamos nuestros productos a su requerimiento, entre ellos:
+    </p>
+
+    <div class="systems">
+      @for (system of systems; track system.title) {
+        <article class="system" appReveal [revealDelay]="($index % 2) * 120">
+          <img
+            [src]="system.image"
+            [alt]="system.title"
+            width="600"
+            height="327"
+            loading="lazy"
+          />
+          <div>
+            <h3 class="subheading">{{ system.title }}</h3>
+            <p>{{ system.text }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<app-contact-section></app-contact-section>

@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  readonly menuOpen = signal(false);
 
+  constructor(
+    private readonly router: Router,
+    private readonly scroller: ViewportScroller
+  ) {}
+
+  toggleMenu() {
+    this.menuOpen.update((open) => !open);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
+
+  scrollToContact() {
+    this.closeMenu();
+    // El id "contactanos" existe en la sección de contacto de cada página.
+    this.scroller.scrollToAnchor('contactanos');
+  }
 }

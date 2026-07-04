@@ -1,0 +1,130 @@
+<app-page-hero
+  image="assets/images/nuevo/nosotros/hero-nosotros.jpg"
+  title="Nosotros"
+  subtitle="El detrás de cada proyecto"
+></app-page-hero>
+
+<!-- Quiénes somos -->
+<section class="section">
+  <div class="section-inner who">
+    <div appReveal>
+      <h2 class="heading">Quiénes somos</h2>
+      <p>
+        En ZT Clima, nos especializamos en proporcionar soluciones integrales
+        en <strong>calefacción, aire acondicionado y agua caliente
+        sanitaria</strong> para uso residencial, comercial e industrial.
+        Nuestro equipo está conformado por profesionales con una vasta
+        experiencia en el diseño de proyectos, instalación de equipamiento y
+        mantenimiento de sistemas de climatización. Nuestra mayor satisfacción
+        y compromiso es brindar un servicio personalizado y orientado al
+        cliente, trabajando estrechamente con cada uno de ellos para entender
+        sus necesidades y proporcionar soluciones óptimas, a medida y de alta
+        calidad.
+      </p>
+    </div>
+    <img
+      src="assets/images/nuevo/nosotros/equipo.jpg"
+      alt="Técnicos de ZT Clima instalando un equipo de climatización en obra"
+      width="640"
+      height="357"
+      loading="lazy"
+      appReveal
+      [revealDelay]="150"
+    />
+  </div>
+</section>
+
+<!-- Valores -->
+<section class="section values-section">
+  <div class="section-inner">
+    <h2 class="heading">La base sobre la que construimos cada proyecto</h2>
+
+    <div class="values">
+      @for (value of values; track value.title) {
+        <article appReveal [revealDelay]="$index * 120">
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Prensa -->
+<section class="section">
+  <div class="section-inner">
+    <h2 class="heading">Reconocidos por nuestra experiencia</h2>
+
+    <article class="press-card" appReveal>
+      <img
+        class="press-photo"
+        src="assets/images/nuevo/nosotros/prensa-losa-radiante.jpg"
+        alt="Comedor de una casa con losa radiante"
+        width="440"
+        height="293"
+        loading="lazy"
+      />
+      <div class="press-body">
+        <h3 class="subheading">
+          ¿Cuánto cuesta instalar losa radiante por metro cuadrado?
+        </h3>
+        <p>
+          Es uno de los sistemas de climatización más elegidos; el precio varía
+          según la cantidad de metros cuadrados y su costo inicial se amortiza
+          por el bajo consumo.
+        </p>
+        <div class="press-footer">
+          <img
+            src="assets/images/nuevo/nosotros/prensa-ln-logo.png"
+            alt="La Nación Propiedades"
+            width="160"
+            height="27"
+            loading="lazy"
+          />
+          <span>La Nación · 4 de agosto de 2025</span>
+          <a
+            class="btn-pill"
+            [href]="site.pressUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Leer más</a
+          >
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section class="section testimonials-section">
+  <div class="section-inner">
+    <h2 class="heading">Nuestros clientes dicen</h2>
+
+    <div class="testimonials">
+      @for (quote of testimonials; track quote) {
+        <figure appReveal [revealDelay]="$index * 120">
+          <div class="stars" aria-label="5 de 5 estrellas">
+            @for (star of [1, 2, 3, 4, 5]; track star) {
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            }
+          </div>
+          <blockquote>{{ quote }}</blockquote>
+        </figure>
+      }
+    </div>
+
+    <a
+      class="btn-pill share-btn"
+      [href]="site.reviewUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Contar mi experiencia</a
+    >
+  </div>
+</section>
+
+<app-brands-marquee></app-brands-marquee>
+
+<app-contact-section></app-contact-section>

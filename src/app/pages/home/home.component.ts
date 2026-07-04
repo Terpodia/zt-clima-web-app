@@ -1,39 +1,47 @@
 import { Component } from '@angular/core';
-import { GalleryComponent } from '../../components/gallery/gallery.component';
-import { ServicesComponent } from '../../components/services/services.component';
-import { AboutComponent } from '../../components/about/about.component';
-import { ClientsComponent } from '../../components/clients/clients.component';
-import { ProductsComponent } from '../../components/products/products.component';
-import { ContactComponent } from '../../components/contact/contact.component';
-import { TrabajosRealizadosComponent } from '../../components/trabajos-realizados/trabajos-realizados.component';
-import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
+import { RouterLink } from '@angular/router';
+import { BrandsMarqueeComponent } from '../../components/brands-marquee/brands-marquee.component';
+import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
+import { RevealDirective } from '../../shared/reveal.directive';
+
+interface ProcessStep {
+  title: string;
+  text: string;
+}
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    GalleryComponent,
-    AboutComponent,
-    ServicesComponent,
-    ClientsComponent,
-    ProductsComponent,
-    ContactComponent,
-    TrabajosRealizadosComponent,
-    ContactFormComponent,
+    RouterLink,
+    BrandsMarqueeComponent,
+    ContactSectionComponent,
+    RevealDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  mainGallery = [
-    'assets/images/1.jpg',
-    'assets/images/2.jpg',
-    'assets/images/3.jpg',
-    'assets/images/4.jpg',
-    'assets/images/5.jpg',
-    'assets/images/6.jpg',
-    'assets/images/7.jpg',
-    'assets/images/8.jpg',
-    'assets/images/9.jpg',
+  readonly steps: ProcessStep[] = [
+    {
+      title: 'Escuchamos tu necesidad',
+      text: 'Comenzamos cada proyecto con una charla personalizada para entender tu espacio, tus expectativas y lo que realmente necesitás.',
+    },
+    {
+      title: 'Diseñamos la mejor solución',
+      text: 'Te asesoramos y elaboramos una propuesta técnica y económica clara, explicando cada detalle y beneficio del sistema.',
+    },
+    {
+      title: 'Presentamos el proyecto',
+      text: 'Una vez aprobada la propuesta, te mostramos los planos e ingeniería del sistema para que tengas total tranquilidad y conformidad.',
+    },
+    {
+      title: 'Hacemos realidad tu instalación',
+      text: 'Llevamos adelante la obra con supervisión constante, cuidando cada detalle para garantizar calidad y cumplimiento en los plazos.',
+    },
+    {
+      title: 'Acompañamos después de la instalación',
+      text: 'Realizamos la puesta en marcha, te explicamos el funcionamiento del sistema y seguimos a tu lado para cualquier consulta o necesidad postventa.',
+    },
   ];
 }

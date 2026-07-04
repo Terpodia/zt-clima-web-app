@@ -1,17 +1,98 @@
-<h1>ZT Clima</h1>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-brand">
+    <img
+      src="assets/logo-alt.svg"
+      alt="ZT Clima — Soluciones en Climatización"
+      width="640"
+      height="163"
+      fetchpriority="high"
+    />
+    <h1 class="visually-hidden">
+      ZT Clima — Calefacción y aire acondicionado en Buenos Aires
+    </h1>
+  </div>
+</section>
 
-<div id="inicio" class="gallery">
-  <app-gallery
-    [galleryImages]="mainGallery"
-    [autoplay]="true"
-    [autoplayDelay]="10000"
-  />
-</div>
+<!-- Servicios: dos tarjetas -->
+<section class="services">
+  <a class="service service--calefaccion" routerLink="/calefaccion" appReveal>
+    <h2 class="heading">Calefacción / ACS</h2>
+    <img
+      class="doodle"
+      src="assets/icons/dibujo-piso-radiante.svg"
+      alt=""
+      width="216"
+      height="306"
+      loading="lazy"
+    />
+    <p class="service-lead">
+      Soluciones integrales en calefacción de alta eficiencia.
+    </p>
+    <p>
+      Instalamos sistemas de calefacción a medida por radiadores o piso
+      radiante que brindan confort y optimizan el consumo energético.
+    </p>
+    <span class="btn-pill">Ver detalle</span>
+  </a>
 
-<div class="container">
-  <app-about />
-  <app-services />
-  <app-trabajos-realizados />
-  <app-products />
-  <app-contact-form />
-</div>
+  <a
+    class="service service--aire"
+    routerLink="/aire"
+    appReveal
+    [revealDelay]="120"
+  >
+    <h2 class="heading">Aire acondicionado</h2>
+    <img
+      class="doodle"
+      src="assets/icons/dibujo-aire.svg"
+      alt=""
+      width="252"
+      height="269"
+      loading="lazy"
+    />
+    <p class="service-lead">
+      Sistemas de aire acondicionado de alta performance.
+    </p>
+    <p>
+      Diseñamos e instalamos soluciones VRF/VRV, multisplit o por conductos,
+      priorizando eficiencia energética, confort térmico y armonía con la
+      arquitectura.
+    </p>
+    <span class="btn-pill">Ver detalle</span>
+  </a>
+</section>
+
+<!-- Banda full-width sobre nosotros -->
+<section class="about-band">
+  <div class="about-inner" appReveal>
+    <p>
+      En ZT Clima desarrollamos proyectos de climatización eficientes y a
+      medida para hogares, empresas y obras. Combinamos experiencia técnica,
+      tecnología de última generación y atención personalizada para ofrecer
+      soluciones confiables y duraderas.
+    </p>
+    <a class="btn-pill" routerLink="/nosotros">Ver detalle</a>
+  </div>
+</section>
+
+<!-- Proceso -->
+<section class="section">
+  <div class="section-inner">
+    <h2 class="heading">Proceso</h2>
+
+    <ol class="steps">
+      @for (step of steps; track step.title) {
+        <li appReveal [revealDelay]="$index * 120">
+          <span class="step-number" aria-hidden="true">{{ $index + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<app-brands-marquee></app-brands-marquee>
+
+<app-contact-section></app-contact-section>

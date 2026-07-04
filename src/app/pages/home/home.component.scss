@@ -1,21 +1,169 @@
-h1 {
-  position: absolute;
-  z-index: -1;
-  color: transparent;
+// Hero full-viewport con la foto de disipadores y el logo centrado.
+// El header sticky flota encima, así que compensamos su alto con margin negativo.
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: -90px;
+  background-image: url("/assets/images/nuevo/hero-home.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-brand {
+  padding: 1rem;
 
-  @media (min-width: 768px) {
-    margin-bottom: 3rem;
+  img {
+    width: min(640px, 86vw);
+    height: auto;
+    filter: drop-shadow(0 2px 12px rgba(255, 255, 255, 0.35));
   }
 }
 
-.container {
-  margin-bottom: 3rem;
-  padding: 1rem;
-  gap: 2rem;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// Dos tarjetas de servicio lado a lado
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: var(--section-pad-y) clamp(1.5rem, 5vw, 4rem);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(0.96);
+
+      .btn-pill {
+        background-color: #d6d6d2;
+      }
+    }
+
+    .doodle {
+      height: 200px;
+      width: auto;
+      margin: 1rem 0;
+    }
+
+    .service-lead {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    p {
+      max-width: 46ch;
+    }
+  }
+
+  .service--calefaccion {
+    background-color: var(--c-bg-cream);
+  }
+
+  .service--aire {
+    background-color: #b8bec7;
+  }
+}
+
+// Banda con foto del living y texto blanco
+.about-band {
+  display: flex;
+  align-items: center;
+  min-height: min(80vh, 720px);
+  padding: var(--section-pad-y) clamp(1rem, 4vw, 2.5rem);
+  background-image: linear-gradient(rgba(30, 24, 18, 0.35), rgba(30, 24, 18, 0.35)),
+    url("/assets/images/nuevo/home-living.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  width: 100%;
+
+  p {
+    max-width: 34ch;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+    line-height: 1.4;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+  }
+}
+
+// Proceso: 5 pasos
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 1.75rem;
+  padding: 0;
+  margin: 1rem 0 0;
+
+  li {
+    h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--c-brown);
+      font-size: 1.15rem;
+      line-height: 1.3;
+      border-bottom: 2px solid var(--c-brown);
+      padding-bottom: 0.75rem;
+      margin: 1rem 0 0.9rem;
+    }
+
+    p {
+      font-size: 0.98rem;
+    }
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid var(--c-brown);
+    border-radius: 50%;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--c-brown);
+  }
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    margin-top: -80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .services {
+    grid-template-columns: 1fr 1fr;
+  }
 }

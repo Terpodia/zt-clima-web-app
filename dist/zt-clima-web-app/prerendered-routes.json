@@ -1,6 +1,9 @@
 {
   "routes": [
     "/",
-    "/mensaje-enviado"
+    "/aire",
+    "/calefaccion",
+    "/mensaje-enviado",
+    "/nosotros"
   ]
 }

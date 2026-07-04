@@ -3,58 +3,59 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 55vh;
   padding: 0 1rem;
 }
 
 .congrats-message {
   text-align: center;
-  padding: 2rem;
-  background-color: #f4f7fb; // light background color for contrast
-  border-radius: 10px;
-  margin: 2rem auto;
+  padding: 2.5rem 2rem;
+  background-color: var(--c-bg-cream);
+  border-radius: var(--radius-card);
+  margin: 2rem auto 0;
   max-width: 600px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-card);
+  animation: fadeIn 0.6s ease-in-out;
 
   h2 {
-    color: #1a73e8; // blue tone for a positive feeling
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
+    font-family: var(--font-heading);
+    color: var(--c-brown);
+    font-size: 1.75rem;
+    margin: 0 0 1rem;
   }
 
   p {
-    color: #333; // dark text for readability
-    font-size: 1.2rem;
+    color: var(--c-text);
+    font-size: 1.15rem;
     line-height: 1.5;
   }
+}
 
-  // Adding a bit of animation to give it a nice effect
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  animation: fadeIn 0.6s ease-in-out;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 button {
   margin: 1.5rem auto;
+  font-family: var(--font-ui);
+  font-weight: 600;
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  color: #fff;
-  background-color: #1a73e8;
+  color: var(--c-text);
+  background-color: #e3e3e0;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #155cb0;
+    background-color: #d6d6d2;
   }
 }

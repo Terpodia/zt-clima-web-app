@@ -1,0 +1,12 @@
+section {
+  background-color: var(--c-surface);
+  // El header sticky flotante mide ~90px; deja aire al scrollear al ancla.
+  scroll-margin-top: 110px;
+}
+
+.lead {
+  text-align: center;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+}

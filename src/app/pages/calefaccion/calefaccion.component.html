@@ -1,0 +1,40 @@
+<app-page-hero
+  image="assets/images/nuevo/calefaccion/hero-calefaccion.jpg"
+  title="Calefacción"
+  subtitle="La tecnología de cada solución"
+></app-page-hero>
+
+<section class="section">
+  <div class="section-inner layout">
+    <div class="items-col">
+      <h2 class="heading">Calefacción / ACS</h2>
+      <p class="intro">
+        Adaptamos nuestros productos a su requerimiento, entre ellos:
+      </p>
+
+      @for (item of items; track item.title) {
+        <article class="item" appReveal [revealDelay]="$index * 120">
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+            width="440"
+            height="240"
+            loading="lazy"
+          />
+          <div>
+            <h3 class="subheading">{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="masonry" appReveal [revealDelay]="200">
+      @for (photo of gallery; track photo.src) {
+        <img [src]="photo.src" [alt]="photo.alt" loading="lazy" />
+      }
+    </div>
+  </div>
+</section>
+
+<app-contact-section></app-contact-section>

@@ -4,9 +4,17 @@
   align-items: center;
   justify-content: center;
   min-height: min(88vh, 900px);
+  background-color: var(--c-bg-cream);
+  overflow: hidden;
+}
+
+// La imagen entra con fade (igual que el appear del sitio Framer)
+.bg {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
+  animation: hero-bg-in 1.3s ease-out 0.15s both;
 }
 
 .veil {
@@ -29,11 +37,41 @@
     font-size: clamp(2.75rem, 9vw, 7rem);
     line-height: 1.05;
     margin: 0;
+    animation: hero-rise 0.9s ease-out 0.25s both;
   }
 
   .subtitle {
     font-size: clamp(1.2rem, 2.5vw, 1.9rem);
     color: #1a1a1a;
     margin-top: 1rem;
+    animation: hero-rise 0.9s ease-out 0.45s both;
+  }
+}
+
+@keyframes hero-bg-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg,
+  .content h1,
+  .content .subtitle {
+    animation: none;
   }
 }

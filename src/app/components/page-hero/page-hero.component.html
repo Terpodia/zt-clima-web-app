@@ -1,7 +1,5 @@
-<section
-  class="hero"
-  [style.background-image]="'url(' + image + ')'"
->
+<section class="hero">
+  <div class="bg" [style.background-image]="'url(' + image + ')'"></div>
   <div class="veil" [style.opacity]="overlay"></div>
   <div class="content">
     @if (title) {

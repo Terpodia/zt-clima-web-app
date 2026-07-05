@@ -17,12 +17,17 @@ ErrorDocument 404 /404/index.html
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml text/plain
 </IfModule>
 
+# Asegura el MIME type correcto para que ExpiresByType matchee
+AddType font/woff2 .woff2
+
 # Caché: JS/CSS llevan hash en el nombre (seguro cachear largo);
-# imágenes sin hash, 1 mes; el HTML nunca se cachea fuerte.
+# fuentes casi nunca cambian, 1 año; imágenes sin hash, 1 mes;
+# el HTML nunca se cachea fuerte.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/css "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType image/webp "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/jpeg "access plus 1 month"

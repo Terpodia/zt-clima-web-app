@@ -1,5 +1,14 @@
 <section class="hero">
-  <img class="bg" [src]="image" alt="" fetchpriority="high" />
+  <img
+    class="bg"
+    [src]="image"
+    [srcset]="srcset"
+    sizes="100vw"
+    width="1920"
+    height="1074"
+    alt=""
+    fetchpriority="high"
+  />
   <div class="veil" [style.opacity]="overlay"></div>
   <div class="content">
     @if (title) {

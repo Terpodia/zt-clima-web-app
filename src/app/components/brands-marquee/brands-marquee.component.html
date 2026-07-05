@@ -6,10 +6,23 @@
   <div class="viewport" aria-label="Marcas con las que trabajamos">
     <div class="track">
       @for (brand of brands; track brand.name) {
-        <img [src]="brand.logo" [alt]="brand.name" loading="lazy" height="56" />
+        <img
+          [src]="brand.logo"
+          [alt]="brand.name"
+          [width]="brand.width"
+          height="56"
+          loading="lazy"
+        />
       }
       @for (brand of brands; track brand.name) {
-        <img [src]="brand.logo" alt="" aria-hidden="true" loading="lazy" height="56" />
+        <img
+          [src]="brand.logo"
+          alt=""
+          aria-hidden="true"
+          [width]="brand.width"
+          height="56"
+          loading="lazy"
+        />
       }
     </div>
   </div>

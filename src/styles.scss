@@ -7,6 +7,32 @@
 @import "tokens";
 @import "grid-settings";
 
+// Fuentes self-hosted (variables, subset latin) — evita la cadena de red
+// HTML → fonts.googleapis.com → fonts.gstatic.com
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("/assets/fonts/sora.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Teachers";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/assets/fonts/teachers.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Ubuntu Sans";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("/assets/fonts/ubuntu-sans.woff2") format("woff2");
+}
+
 html {
   scroll-behavior: smooth;
 }

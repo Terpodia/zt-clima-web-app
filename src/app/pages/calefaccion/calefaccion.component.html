@@ -31,7 +31,13 @@
 
     <div class="masonry" appReveal [revealDelay]="200">
       @for (photo of gallery; track photo.src) {
-        <img [src]="photo.src" [alt]="photo.alt" loading="lazy" />
+        <img
+          [src]="photo.src"
+          [alt]="photo.alt"
+          [width]="photo.w"
+          [height]="photo.h"
+          loading="lazy"
+        />
       }
     </div>
   </div>

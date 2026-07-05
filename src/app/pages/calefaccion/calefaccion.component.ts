@@ -40,26 +40,38 @@ export class CalefaccionComponent {
     {
       src: 'assets/images/nuevo/calefaccion/galeria-caldera.webp',
       alt: 'Caldera mural instalada',
+      w: 720,
+      h: 894,
     },
     {
       src: 'assets/images/nuevo/calefaccion/galeria-relieve.webp',
       alt: 'Detalle de cañerías de piso radiante en pared',
+      w: 720,
+      h: 1280,
     },
     {
       src: 'assets/images/nuevo/calefaccion/galeria-radiador.webp',
       alt: 'Radiador de aluminio',
+      w: 720,
+      h: 900,
     },
     {
       src: 'assets/images/nuevo/calefaccion/galeria-valvula.webp',
       alt: 'Válvula de conexión de radiador',
+      w: 720,
+      h: 720,
     },
     {
       src: 'assets/images/nuevo/calefaccion/galeria-piso-radiante.webp',
       alt: 'Instalación de piso radiante',
+      w: 720,
+      h: 1290,
     },
     {
       src: 'assets/images/nuevo/calefaccion/galeria-colector.webp',
       alt: 'Colector de piso radiante',
+      w: 720,
+      h: 720,
     },
   ];
 

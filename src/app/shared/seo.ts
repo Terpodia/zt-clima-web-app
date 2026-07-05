@@ -1,5 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable, Inject, DOCUMENT } from '@angular/core';
+
 import { Meta } from '@angular/platform-browser';
 
 const BASE_URL = 'https://www.ztclima.com.ar';

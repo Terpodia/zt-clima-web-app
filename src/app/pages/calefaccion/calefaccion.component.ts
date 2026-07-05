@@ -11,11 +11,10 @@ interface CalefaccionItem {
 }
 
 @Component({
-  selector: 'app-calefaccion',
-  standalone: true,
-  imports: [PageHeroComponent, ContactSectionComponent, RevealDirective],
-  templateUrl: './calefaccion.component.html',
-  styleUrl: './calefaccion.component.scss',
+    selector: 'app-calefaccion',
+    imports: [PageHeroComponent, ContactSectionComponent, RevealDirective],
+    templateUrl: './calefaccion.component.html',
+    styleUrl: './calefaccion.component.scss'
 })
 export class CalefaccionComponent {
   readonly items: CalefaccionItem[] = [

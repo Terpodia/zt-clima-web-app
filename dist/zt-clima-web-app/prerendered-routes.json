@@ -1,10 +1,10 @@
 {
-  "routes": [
-    "/",
-    "/404",
-    "/aire",
-    "/calefaccion",
-    "/mensaje-enviado",
-    "/nosotros"
-  ]
+  "routes": {
+    "/": {},
+    "/404": {},
+    "/aire": {},
+    "/calefaccion": {},
+    "/mensaje-enviado": {},
+    "/nosotros": {}
+  }
 }

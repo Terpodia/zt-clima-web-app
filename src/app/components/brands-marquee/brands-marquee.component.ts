@@ -8,11 +8,10 @@ interface Brand {
 }
 
 @Component({
-  selector: 'app-brands-marquee',
-  standalone: true,
-  imports: [],
-  templateUrl: './brands-marquee.component.html',
-  styleUrl: './brands-marquee.component.scss',
+    selector: 'app-brands-marquee',
+    imports: [],
+    templateUrl: './brands-marquee.component.html',
+    styleUrl: './brands-marquee.component.scss'
 })
 export class BrandsMarqueeComponent {
   readonly brands: Brand[] = [

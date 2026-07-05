@@ -10,11 +10,10 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-contact-form',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss'],
+    selector: 'app-contact-form',
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: './contact-form.component.html',
+    styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
   contactForm: FormGroup;

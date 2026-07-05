@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+export default `<!DOCTYPE html>
 <html lang="es" data-beasties-container="">
 
 <head>
@@ -37,7 +37,7 @@
     },
     "hasMap": "https://maps.app.goo.gl/R22BXo4pvteVD8tc7",
     "areaServed": "Buenos Aires, Argentina",
-    "priceRange": "$$"
+    "priceRange": "\$\$"
   }
   </script>
 
@@ -74,4 +74,4 @@
   <app-root></app-root>
 <link rel="modulepreload" href="chunk-YSIZMVE6.js"><link rel="modulepreload" href="chunk-Y6NRLXSE.js"><link rel="modulepreload" href="chunk-CU62PMH4.js"><script src="main-K3DKOS46.js" type="module"></script></body>
 
-</html>
+</html>`;

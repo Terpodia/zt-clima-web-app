@@ -11,16 +11,15 @@ interface ProcessStep {
 }
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    RouterLink,
-    BrandsMarqueeComponent,
-    ContactSectionComponent,
-    RevealDirective,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [
+        RouterLink,
+        BrandsMarqueeComponent,
+        ContactSectionComponent,
+        RevealDirective,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   constructor(seo: SeoService) {

@@ -4,11 +4,10 @@ import { ViewportScroller } from '@angular/common';
 import { SITE } from '../../shared/site-data';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+    selector: 'app-footer',
+    imports: [RouterLink],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
   readonly site = SITE;

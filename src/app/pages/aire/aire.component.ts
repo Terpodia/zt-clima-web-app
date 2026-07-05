@@ -11,11 +11,10 @@ interface AireSystem {
 }
 
 @Component({
-  selector: 'app-aire',
-  standalone: true,
-  imports: [PageHeroComponent, ContactSectionComponent, RevealDirective],
-  templateUrl: './aire.component.html',
-  styleUrl: './aire.component.scss',
+    selector: 'app-aire',
+    imports: [PageHeroComponent, ContactSectionComponent, RevealDirective],
+    templateUrl: './aire.component.html',
+    styleUrl: './aire.component.scss'
 })
 export class AireComponent {
   readonly systems: AireSystem[] = [

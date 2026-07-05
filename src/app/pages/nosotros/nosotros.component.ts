@@ -12,16 +12,15 @@ interface ValueCard {
 }
 
 @Component({
-  selector: 'app-nosotros',
-  standalone: true,
-  imports: [
-    PageHeroComponent,
-    BrandsMarqueeComponent,
-    ContactSectionComponent,
-    RevealDirective,
-  ],
-  templateUrl: './nosotros.component.html',
-  styleUrl: './nosotros.component.scss',
+    selector: 'app-nosotros',
+    imports: [
+        PageHeroComponent,
+        BrandsMarqueeComponent,
+        ContactSectionComponent,
+        RevealDirective,
+    ],
+    templateUrl: './nosotros.component.html',
+    styleUrl: './nosotros.component.scss'
 })
 export class NosotrosComponent {
   readonly site = SITE;

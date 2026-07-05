@@ -1,11 +1,10 @@
+@use "tokens";
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
 }
-
-@import "tokens";
-@import "grid-settings";
 
 // Fuentes self-hosted (variables, subset latin) — evita la cadena de red
 // HTML → fonts.googleapis.com → fonts.gstatic.com

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { waUrl } from './shared/site-data';
+import { pushGtmEvent } from './shared/gtm';
 
 @Component({
     selector: 'app-root',
@@ -14,13 +14,8 @@ import { waUrl } from './shared/site-data';
 export class AppComponent {
   readonly whatsappUrl = waUrl();
 
-  constructor(private readonly gtmService: GoogleTagManagerService) {}
-
   onWhatsappClick() {
-    this.gtmService.pushTag({ event: 'ChatJoin' });
-    this.gtmService.pushTag({
-      event: 'WhatsAppOptionSelected',
-      option: 'Calefacción',
-    });
+    pushGtmEvent({ event: 'ChatJoin' });
+    pushGtmEvent({ event: 'WhatsAppOptionSelected', option: 'Calefacción' });
   }
 }

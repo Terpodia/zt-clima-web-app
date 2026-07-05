@@ -21,6 +21,5 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideClientHydration(),
-    { provide: 'googleTagManagerId', useValue: 'GTM-KVP4PQHH' },
   ],
 };

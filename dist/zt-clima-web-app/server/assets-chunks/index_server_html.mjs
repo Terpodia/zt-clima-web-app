@@ -74,6 +74,6 @@ export default `<!DOCTYPE html>
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-YSIZMVE6.js"><link rel="modulepreload" href="chunk-Y6NRLXSE.js"><link rel="modulepreload" href="chunk-CU62PMH4.js"><script src="main-K3DKOS46.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-36IHWNJH.js"><link rel="modulepreload" href="chunk-YQOW3WKW.js"><link rel="modulepreload" href="chunk-QLSYXFCT.js"><script src="main-WZJORCUN.js" type="module"></script></body>
 
 </html>`;

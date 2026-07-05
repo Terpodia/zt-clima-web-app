@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../shared/seo';
 import { BrandsMarqueeComponent } from '../../components/brands-marquee/brands-marquee.component';
@@ -19,6 +19,7 @@ interface ProcessStep {
         RevealDirective,
     ],
     templateUrl: './home.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './home.component.scss'
 })
 export class HomeComponent {

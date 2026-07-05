@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { SeoService } from '../../shared/seo';
 
@@ -6,6 +6,7 @@ import { SeoService } from '../../shared/seo';
   selector: 'app-message-send',
   standalone: true,
   templateUrl: './message-send.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './message-send.component.scss',
 })
 export class MessageSendComponent {

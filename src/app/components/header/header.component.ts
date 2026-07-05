@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 
@@ -6,6 +6,7 @@ import { ViewportScroller } from '@angular/common';
     selector: 'app-header',
     imports: [RouterLink, RouterLinkActive],
     templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {

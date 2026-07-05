@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../shared/seo';
 
@@ -6,6 +6,7 @@ import { SeoService } from '../../shared/seo';
     selector: 'app-not-found',
     imports: [RouterLink],
     templateUrl: './not-found.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './not-found.component.scss'
 })
 export class NotFoundComponent {

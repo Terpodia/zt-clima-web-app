@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 interface Brand {
   name: string;
@@ -11,6 +11,7 @@ interface Brand {
     selector: 'app-brands-marquee',
     imports: [],
     templateUrl: './brands-marquee.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './brands-marquee.component.scss'
 })
 export class BrandsMarqueeComponent {

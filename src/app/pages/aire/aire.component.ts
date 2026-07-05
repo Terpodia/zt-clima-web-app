@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SeoService } from '../../shared/seo';
 import { PageHeroComponent } from '../../components/page-hero/page-hero.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
@@ -14,6 +14,7 @@ interface AireSystem {
     selector: 'app-aire',
     imports: [PageHeroComponent, ContactSectionComponent, RevealDirective],
     templateUrl: './aire.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './aire.component.scss'
 })
 export class AireComponent {

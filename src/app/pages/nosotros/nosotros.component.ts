@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SeoService } from '../../shared/seo';
 import { PageHeroComponent } from '../../components/page-hero/page-hero.component';
 import { BrandsMarqueeComponent } from '../../components/brands-marquee/brands-marquee.component';
@@ -20,6 +20,7 @@ interface ValueCard {
         RevealDirective,
     ],
     templateUrl: './nosotros.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './nosotros.component.scss'
 })
 export class NosotrosComponent {

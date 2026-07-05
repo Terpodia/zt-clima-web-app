@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
     selector: 'app-contact-form',
     imports: [ReactiveFormsModule],
     templateUrl: './contact-form.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {

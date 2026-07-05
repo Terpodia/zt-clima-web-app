@@ -2,29 +2,49 @@
   <div class="form-group">
     <label for="name">Nombre</label>
     <input id="name" formControlName="name" placeholder="Nombre y apellido" autocomplete="name" />
-    <div *ngIf="name?.invalid && name?.touched" class="error-message">
-      <small *ngIf="name?.errors?.['required']">El nombre es obligatorio.</small>
-      <small *ngIf="name?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
-      <small *ngIf="name?.errors?.['maxlength']">El nombre debe tener máximo 500 caracteres.</small>
-    </div>
+    @if (name?.invalid && name?.touched) {
+      <div class="error-message">
+        @if (name?.errors?.['required']) {
+          <small>El nombre es obligatorio.</small>
+        }
+        @if (name?.errors?.['minlength']) {
+          <small>El nombre debe tener al menos 3 caracteres.</small>
+        }
+        @if (name?.errors?.['maxlength']) {
+          <small>El nombre debe tener máximo 500 caracteres.</small>
+        }
+      </div>
+    }
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
     <input id="email" type="email" formControlName="email" placeholder="correo@gmail.com" autocomplete="email" />
-    <div *ngIf="email?.invalid && email?.touched" class="error-message">
-      <small *ngIf="email?.errors?.['required']">El email es obligatorio.</small>
-      <small *ngIf="email?.errors?.['email']">El formato del email no es válido.</small>
-    </div>
+    @if (email?.invalid && email?.touched) {
+      <div class="error-message">
+        @if (email?.errors?.['required']) {
+          <small>El email es obligatorio.</small>
+        }
+        @if (email?.errors?.['email']) {
+          <small>El formato del email no es válido.</small>
+        }
+      </div>
+    }
   </div>
 
   <div class="form-group">
     <label for="phone">Celular</label>
     <input id="phone" type="tel" formControlName="phone" placeholder="+54 11 0000000" autocomplete="tel" />
-    <div *ngIf="phone?.invalid && phone?.touched" class="error-message">
-      <small *ngIf="phone?.errors?.['required']">El celular es obligatorio.</small>
-      <small *ngIf="phone?.errors?.['pattern'] || phone?.errors?.['minlength'] || phone?.errors?.['maxlength']">El número de celular no es válido.</small>
-    </div>
+    @if (phone?.invalid && phone?.touched) {
+      <div class="error-message">
+        @if (phone?.errors?.['required']) {
+          <small>El celular es obligatorio.</small>
+        }
+        @if (phone?.errors?.['pattern'] || phone?.errors?.['minlength'] || phone?.errors?.['maxlength']) {
+          <small>El número de celular no es válido.</small>
+        }
+      </div>
+    }
   </div>
 
   <div class="form-group">
@@ -35,10 +55,16 @@
       placeholder="Contanos tu necesidad"
       rows="4"
     ></textarea>
-    <div *ngIf="message?.invalid && message?.touched" class="error-message">
-      <small *ngIf="message?.errors?.['required']">La consulta es obligatoria.</small>
-      <small *ngIf="message?.errors?.['minlength']">La consulta debe tener al menos 10 caracteres.</small>
-    </div>
+    @if (message?.invalid && message?.touched) {
+      <div class="error-message">
+        @if (message?.errors?.['required']) {
+          <small>La consulta es obligatoria.</small>
+        }
+        @if (message?.errors?.['minlength']) {
+          <small>La consulta debe tener al menos 10 caracteres.</small>
+        }
+      </div>
+    }
   </div>
 
   <button type="submit" [disabled]="isLoading" class="submit-btn">

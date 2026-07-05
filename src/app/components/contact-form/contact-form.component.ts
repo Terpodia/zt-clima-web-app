@@ -5,13 +5,13 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-contact-form',
-    imports: [CommonModule, ReactiveFormsModule],
+    imports: [ReactiveFormsModule],
     templateUrl: './contact-form.component.html',
     styleUrls: ['./contact-form.component.scss']
 })

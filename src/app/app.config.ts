@@ -1,6 +1,6 @@
 import {
   ApplicationConfig,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
@@ -9,10 +9,10 @@ import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // Experimental: change detection sin zone.js (menos JS, sin monkey-patching
-    // de APIs del navegador). Requiere que los cambios de estado fuera de
-    // eventos de template notifiquen manualmente (signals o detectChanges).
-    provideExperimentalZonelessChangeDetection(),
+    // Change detection sin zone.js (estable desde Angular 21): menos JS y sin
+    // monkey-patching. Los cambios de estado fuera de eventos de template
+    // notifican manualmente (signals o detectChanges).
+    provideZonelessChangeDetection(),
     provideRouter(
       routes,
       withInMemoryScrolling({

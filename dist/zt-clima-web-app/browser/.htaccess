@@ -1,0 +1,37 @@
+RewriteEngine On
+
+# Dominio canónico: cualquier host que no sea www.ztclima.com.ar (apex,
+# ztclima.com, www.ztclima.com, http://...) redirige 301 a la canónica.
+# Se excluye /.well-known/ para no romper la renovación de AutoSSL.
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.ztclima\.com\.ar$ [NC]
+RewriteRule ^(.*)$ https://www.ztclima.com.ar/$1 [R=301,L]
+
+# Las rutas reales existen como carpetas prerenderizadas (aire/, calefaccion/, ...);
+# lo que no exista devuelve un 404 real con la página 404 prerenderizada.
+ErrorDocument 404 /404/index.html
+
+# Compresión
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml text/plain
+</IfModule>
+
+# Asegura el MIME type correcto para que ExpiresByType matchee
+AddType font/woff2 .woff2
+
+# Caché: JS/CSS llevan hash en el nombre (seguro cachear largo);
+# fuentes casi nunca cambian, 1 año; imágenes sin hash, 1 mes;
+# el HTML nunca se cachea fuerte.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
